@@ -19,7 +19,7 @@ public class Estado implements Serializable {
 	private Integer id;
 	private String nome;
 	
-	@OneToMany(mappedBy = "estado")	
+	@OneToMany(mappedBy = "estado") // UM ESTADO PARA MUITAS CIDADES
 	private List<Cidade> cidades = new ArrayList<>();
 
 	public Estado() {
