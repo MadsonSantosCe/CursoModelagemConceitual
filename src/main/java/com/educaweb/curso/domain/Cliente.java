@@ -15,6 +15,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import com.educaweb.curso.domain.enums.TipoCliente;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class Cliente implements Serializable {
@@ -28,6 +29,8 @@ public class Cliente implements Serializable {
 	private String cpf;
 	private Integer tipo;	
 	
+	
+	@JsonManagedReference
 	@OneToMany(mappedBy= "cliente") //UM CLIENTE PARA MUITOS ENDEREÇOS
 	private List<Endereco> enderecos = new ArrayList<>();
 	
@@ -127,10 +130,4 @@ public class Cliente implements Serializable {
 			return false;
 		return true;
 	}
-
-	@Override
-	public String toString() {
-		return "Cliente [id=" + id + ", nome=" + nome + "]";
-	}		
-	
 }
