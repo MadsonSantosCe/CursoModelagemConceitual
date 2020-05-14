@@ -25,4 +25,9 @@ public class CategoriaService {
 		obj.setId(null);
 		return reposity.save(obj);
 	}
+	
+	public Categoria update(Categoria obj) {
+		find(obj.getId());
+		return reposity.save(obj);
+	}
 }
