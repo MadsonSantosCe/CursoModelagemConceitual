@@ -1,5 +1,6 @@
 package com.educaweb.curso.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,10 @@ public class CategoriaService {
 
 	@Autowired
 	private CategoriaRepository reposity;
+	
+	public List<Categoria> findAll(){
+		return reposity.findAll();
+	}
 	
 	public Categoria find(Integer id) {
 		Optional<Categoria> obj = reposity.findById(id);
@@ -41,5 +46,6 @@ public class CategoriaService {
 			throw new DataIntegrityException("Não é possível excluir uma categoria que possui produtos");
 		}
 		
-	}
+	}	
+	
 }
