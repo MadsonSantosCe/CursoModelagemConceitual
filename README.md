@@ -1,5 +1,5 @@
 
-# Aplicativo de vendas com Java Spring Boot no back end e Ionic no front end.
+# Aplicativo de vendas com Java Spring Boot e Ionic.
 Repositório do aplicativo desenvolvido durante o curso de springbot do professor [Nélio Alves](https://www.udemy.com/user/nelio-alves/ "Nélio Alves") ministrado na plataforma Udemy. O curso abrange desde o UML a hospedagem do aplicativo na Play Store.
 
 ## Recursos Utimizados (até o momento)
