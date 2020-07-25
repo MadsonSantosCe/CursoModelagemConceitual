@@ -3,6 +3,7 @@ package com.educaweb.curso.services;
 import java.util.List;
 import java.util.Optional;
 
+import com.educaweb.curso.dto.CategoriaDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
@@ -54,5 +55,9 @@ public class CategoriaService {
 	public Page<Categoria> findPage(Integer page, Integer linesPerPage, String orderBy, String direction){
 		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Sort.Direction.valueOf(direction), orderBy);
 		return reposity.findAll(pageRequest);
+	}
+
+	public Categoria fromDto(CategoriaDTO objDto){
+		return new Categoria(objDto.getId(), objDto.getNome());
 	}
 }
